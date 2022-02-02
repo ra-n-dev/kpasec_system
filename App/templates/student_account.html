@@ -1,0 +1,111 @@
+{% extends "bootstrap.html" %}
+{% block content %}
+<div class="mainbody">
+<div class="row">
+	<div class="col">
+		<table class="table table-dark table-hover" style="margin-top: 20px;">
+		  <thead>
+		    <tr>
+		      <th scope="col">#</th>
+		      <th scope="col">First</th>
+		      <th scope="col">Last</th>
+		      <th scope="col">Handle</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <th scope="row">1</th>
+		      <td>Student Name</td>
+		      <td>Otto</td>
+		      <td>{{stud.fullname}}</td>
+		    </tr>
+		    <tr>
+		      <th scope="row">2</th>
+		      <td>Contact</td>
+		      <td>Thornton</td>
+		      <td>{{stud.parent_no}}</td>
+		    </tr>
+		    <tr>
+		      <th scope="row">2</th>
+		      <td>Semester</td>
+		      <td>Thornton</td>
+		      <td>First Semester</td>
+		    </tr>
+		    <tr>
+		      <th scope="row">2</th>
+		      <td>Term Fee</td>
+		      <td>Thornton</td>
+		      <td>{{terminal_fee}}</td>
+		    </tr>
+		    <tr>
+		      <th scope="row">2</th>
+		      <td>Paid</td>
+		      <td>Thornton</td>
+		      <td>{{total_pmt}}</td>
+		    </tr>
+		    <tr>
+		      <th scope="row">2</th>
+		      <td>Balance</td>
+		      <td>Thornton</td>
+		      <td>{{terminal_fee - total_pmt}}</td>
+		    </tr>
+		    <tr>
+		      <th scope="row">2</th>
+		      <td>Class</td>
+		      <td>Thornton</td>
+		      <td>{{stud.class1}}</td>
+		    </tr>
+		  </tbody>
+		</table>
+	</div>
+	<div class="col">
+		<table class="table table-dark table-hover" style="margin-top: 20px;">
+		  <thead>
+		    <tr>
+		      <th scope="col">#</th>
+		      <th scope="col">Date</th>
+		      <th scope="col">Details</th>
+		      <th scope="col">Mode</th>
+		      <th scope="col">Debit</th>
+		      <th scope="col">Credit</th>
+		      <th scope="col">Balance</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	<tr>
+		      <th scope="row">1</th>
+		      <td>2022-01-01</td>
+		      <td>Debit Balance</td>
+		      <td></td>
+		      <td>{{terminal_fee}}</td>
+		      <td></td>
+		      <td>{{terminal_fee}}</td>
+		    </tr>
+		  	{% for bal, amt in zip1 %}
+		    <tr>
+		      <th scope="row">1</th>
+		      <td>{{amt.date.date()}}</td>
+		      <td>{{amt.category}}</td>
+		      <td>{{amt.mode_of_payment}}</td>
+		      <td></td>
+		      <td>{{amt.amount}}</td>
+		      <td>{{bal}}</td>
+		    </tr>
+		    {% endfor %}
+		  </tbody>
+		  <tfoot>
+		  	<tr>
+		      <th scope="row">1</th>
+		      <td>TOTAL</td>
+		      <td></td>
+		      <td></td>
+		      <td></td>
+		      <td></td>
+		      <td>{{cum1[-1]}}</td>
+		    </tr>
+		  </tfoot>
+		</table>
+	</div>
+</div>
+</div>
+{% endblock %}

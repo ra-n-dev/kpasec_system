@@ -1,0 +1,17 @@
+{% extends "bootstrap.html" %}
+{% block content %}
+<div class="bg-success">
+	<h2><a href="{{url_for('download')}}">Download</a></h2>
+	<center>
+		<form action="" method="POST">
+			<label>Enter Name</label>
+			<input type="text" name="name">
+			<br>
+			<label>Enter Class</label>
+			<input type="text" name="class">
+			<br>
+			<input type="submit" name="submit1">
+		</form>
+	</center>
+</div>
+{% endblock %}

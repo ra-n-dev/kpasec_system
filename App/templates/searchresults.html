@@ -1,0 +1,38 @@
+{% extends "bootstrap.html" %}
+{% block content %}
+<style type="text/css">
+	#col2{
+		border: 2px solid black;
+		margin-top: 60px;
+		padding-top: 10px;
+		padding-bottom: 30px;
+	}
+	#search1{
+		border: 2px solid gold;
+		height: 40px;
+	}
+	hr{
+		color: blue;
+		border: 5px solid blue;
+	}
+</style>
+<div class="row">
+	<div class="col"></div>
+	<div class="col" id="col2">
+	<center>
+		<div>
+		<form>
+			<center><label class="fw-bold">Enter Student Parent Contact</label></center>
+			<hr>
+			<br>
+			<input  id="search1" type="text" name="idea" class="rounded-pill text-center text-danger fw-bold border-danger" placeholder="e.g. 0249123128">
+			<input type="submit" name="sub1" class="btn btn-primary rounded-pill text-center text-danger fw-bold btn-outline-success">
+		</form>
+	</div>
+		<a href="{{url_for('student_account', number=user_res.parent_no)}}"></a>
+	</div>
+	</center>
+	<div class="col"></div>
+	</div>
+	
+{% endblock %}
